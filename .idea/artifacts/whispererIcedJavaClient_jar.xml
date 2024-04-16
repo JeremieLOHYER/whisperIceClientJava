@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="whispererIcedJavaClient:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/whispererIcedJavaClient_jar</output-path>
+    <root id="archive" name="whispererIcedJavaClient.jar">
+      <element id="module-output" name="whispererIcedJavaClient" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/zeroc/ice/3.7.0/ice-3.7.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
