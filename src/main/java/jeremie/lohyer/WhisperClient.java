@@ -15,7 +15,7 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
-public class Client {
+public class WhisperClient {
 
     private Communicator communicator;
 
@@ -24,7 +24,7 @@ public class Client {
 
     private int nbBlocs = 1;
 
-    public Client() {
+    public WhisperClient() {
         communicator = com.zeroc.Ice.Util.initialize();
     }
 
@@ -93,21 +93,21 @@ public class Client {
     }
 
     public static void main(String[] args) {
-        Client monClient = new Client();
+        WhisperClient monWhisperClient = new WhisperClient();
 
         ImplTextSender test = new ImplTextSender();
 
         test.setGetCompletionCallBack((s) -> System.out.println("my callBack said : \n" + s));
         test.setGetCompletionCallBack((val) -> {
-            double percentage = (val / (double) monClient.getNbBlocs()) * 100;
+            double percentage = (val / (double) monWhisperClient.getNbBlocs()) * 100;
             System.out.println("upload : " + String.format("%.1f", percentage) + "%");
         });
 
-        monClient.initClient("192.168.1.46", test);
+        monWhisperClient.initClient("192.168.1.46", test);
 
-        monClient.upload("D:/musique/jeremieJAIPETE_meufamanu.wav");
+        monWhisperClient.upload("D:/musique/jeremieJAIPETE_meufamanu.wav");
 
-        monClient.disconnect();
+        monWhisperClient.disconnect();
     }
 
     public void upload(String filePath) {
