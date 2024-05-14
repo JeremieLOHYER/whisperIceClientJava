@@ -121,8 +121,9 @@ public class WhisperClient {
         // Obtenez la taille du fichier pour calculer le nombre de blocs nécessaires
         long fileSize = file.length();
         int blockSize = 8192 * 96; // Taille du bloc, vous pouvez ajuster cette valeur selon vos besoins
-        nbBlocs = (int) Math.ceil((double) fileSize / blockSize);
+        nbBlocs = (int) Math.ceil( (double) fileSize / blockSize);
 
+        System.out.println(nbBlocs + " blocs");
         speechReceiver.prepareUpload(nbBlocs);
         // Préparez l'envoi de la chanson au serveur
 
